@@ -1,0 +1,13 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+    <h3 class="headtext">Dodaj turniej</h3>
+    <form action="" method="POST">{% csrf_token %}
+        <h3 class="maintext">Nazwa: </h3>
+        {{ form.name }}
+        <h3 class="maintext">Data (rrrr-mm-dd): </h3>
+        {{ form.date }}
+        <br>{{ form.errors }}<br>
+        <input class="toggle" type="submit" value="&nbsp;DODAJ&nbsp;">
+    </form>
+{% endblock %}

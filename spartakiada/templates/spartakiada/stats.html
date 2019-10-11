@@ -1,0 +1,34 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+
+{% include 'spartakiada/stats_players.html' %}
+<br><br>
+{% include 'spartakiada/stats_teams.html' %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="/static/spartakiada/style.css">
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+<!--<script type="text/javascript" src="/static/js/table.js"></script>-->
+
+<script>
+    $(function () {
+
+    $(document).ready( function () {
+        $('.stats').DataTable({
+        "paging": false,
+        "info": false,
+
+        });
+    });
+
+})
+</script>
+
+<a href="{% url 'refresh-stats' %}"
+       class="toggle">
+        &nbsp;UAKTUALNIJ STATYSTYKI&nbsp;</a>&nbsp;
+<div style="height: 65px;"></div>
+
+{% endblock %}

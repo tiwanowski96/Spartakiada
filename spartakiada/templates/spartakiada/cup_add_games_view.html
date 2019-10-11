@@ -1,0 +1,31 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+    <h3 class="headtext">Dodaj dyscypliny do turnieju <a class="maintext">{{ cup }}</a></h3>
+
+    <form action="" method="POST">{% csrf_token %}
+        <h4><table class="tabcon">
+            <tr class="maintext">
+                <th style="text-align: center;"></th>
+                <th style="text-align: center;">Wybierz</th>
+                <th style="text-align: center;">I</th>
+                <th style="text-align: center;">D</th>
+            </tr>
+        {% for game in game_list %}
+            <tr>
+                <th>{{ game.name }}</th>
+                <td style="text-align: center;"><input class="checkbox" type='checkbox' name='game' value='{{ game.id }}'></td>
+                <td style="text-align: center;"><input class="checkbox" type='checkbox' name='ind_{{ game.id }}' value='ind'></td>
+                <td style="text-align: center;"><input class="checkbox" type='checkbox' name='team_{{ game.id }}' value='team'></td>
+            </tr>
+        {% empty %}
+            <a id="link">BRAK DYSCYPLIN</a><br><br>
+            <a href="{% url 'add-game' %}"
+        class="toggle">
+        &nbsp;DODAJ DYSYCPLINY&nbsp;</a>
+        {% endfor %}
+        </table></h4>
+        <h5><br>I - rozgrywki indywidualne<br>D - rozgrywki drużynowe</h5>
+        <br><input class="toggle" type="submit" value="&nbsp;DODAJ&nbsp;">
+    </form>
+{% endblock %}

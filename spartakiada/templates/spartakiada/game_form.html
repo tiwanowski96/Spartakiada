@@ -1,0 +1,20 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+
+    <h3 class="headtext">Dodaj dyscyplinę :</h3>
+    <form action="" method="POST">{% csrf_token %}
+        <h3 class="maintext">Nazwa: </h3>
+        {{ form.name }}&nbsp;
+        <input class="toggle" type="submit" value="&nbsp;DODAJ&nbsp;">
+    </form>
+
+    {% if form.name.errors %}
+    <footer class="footer">
+        <p class="warning"><strong>Taka dyscyplina już istnieje</strong></p>
+    </footer>
+    {% endif %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/alerts.js"></script>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+
+<h3 class="headtext">Turnieje</h3>
+<ol>
+{% for cup in object_list %}
+    <li><a class="maintext" href="/cup/{{cup.id}}/"><strong>{{ cup.name }}</strong> &nbsp;{{ cup.date }}</a></li>
+{% empty %}
+    <p class="maintext">BRAK TURNIEJÓW</p>
+{% endfor %}
+</ol>
+
+{% endblock %}

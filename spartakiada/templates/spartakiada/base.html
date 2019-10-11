@@ -1,0 +1,74 @@
+{% load static %}
+
+<!doctype html>
+
+<html>
+    <head>
+        <title>Spartakiada</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{% static 'spartakiada/style.css' %}">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body style="background-color: lightgrey; margin: 10px;">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="height: 110px;">
+          <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="navbar-main-collapse">
+                MENU
+                </button>
+                <div class="col-sm-3">
+                    <a class="navbar-brand" href="/"><img width="300" src="{% static 'spartakiada/logo.gif' %}" /></a>
+                </div>
+            </div>
+                <div class="col-sm-7">
+                    <ul class="nav navbar-nav navbar-fixed-center" style="font-size: 19px; text-align: center;">
+                        <li><a href="/players/">ZAWODNICY</a></li>
+                        <li><a href="/teams/">DRUŻYNY</a></li>
+                        <li><a href="/games/">DYSCYPLINY</a></li>
+                        <li><a href="/add_cup/">DODAJ TURNIEJ</a></li>
+                        <li><a href="/cups_list/">TURNIEJE</a></li>
+                        <li><a href="/stats/">RANKING</a></li>
+                        <li><a href="/about/">O NAS</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if  user.is_authenticated %}
+                        <li><a>{{ user }}</a></li>
+                        <li><a href="/logout">
+                            <span class="glyphicon glyphicon-log-out"></span>
+                            WYLOGUJ</a></li>
+                        {% else %}
+                        <li><a href="/register/">
+                            <span class="glyphicon glyphicon-user"></span>
+                            ZAREJESTRUJ</a></li>
+                        <li><a href="/login/">
+                            <span class="glyphicon glyphicon-log-in"></span>
+                            ZALOGUJ</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+          </div>
+        </nav>
+
+    <div id="container">
+    {% block content %}
+
+    {% endblock %}
+    </div>
+
+    <div style="height: 35px";></div>
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="nav navbar-nav navbar-right">
+        <p class="navbar-text" style="text-transform: uppercase;">Iwanowski & Radomski Production</p>
+        <p class="navbar-text" style="text-transform: uppercase;">2017</p>
+        <p class="navbar-text" style="text-transform: uppercase;">v.1.0&nbsp;&nbsp;&nbsp;</p>
+        </div>
+    </nav>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+</html>

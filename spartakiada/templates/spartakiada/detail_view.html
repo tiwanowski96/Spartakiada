@@ -1,0 +1,53 @@
+{% block content %}
+
+{% if partaker.was_second > 0 %}
+        <div>
+            <h4 class="maintext">
+            {% if player.gender == "F" %}
+                Zawodniczka była druga
+            {% else %}
+                Zawodnik był drugi
+            {% endif %}
+
+            {% if partaker.was_second == 1 %}
+            raz.
+            {% else %}
+            {{partaker.was_second}} razy.
+            {% endif %}
+            </h4>
+        </div>
+        {% endif %}
+
+    <br>
+    <div><ol><h3 class="maintext" style="color: black;">Odbyte mecze:</h3><br>
+
+    {% for info in partaker.details %}
+
+        {% if info.player1 != info.player2 %}
+
+        <li><a class="maintext">{{info.player1}} - {{info.player2}}</a> |
+
+                {% if info.points1 is None %}
+
+            <strong>wynik nieznany / mecz nierozstrzygniety</strong>
+
+                {% else %}
+
+            <strong>{{info.points1}} : {{info.points2}}</strong>
+
+                {% endif %}
+
+        <br>{{info.game_name}} (etap {{info.lap}}) na turnieju {{info.tournament_name}} ({{info.tournament_date}}) </li>
+
+
+        {% endif %}
+    <br>
+        {% empty %}
+
+        BRAK
+
+    {% endfor %}
+
+    </ol></div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+
+    {% include 'spartakiada/player_list_itself.html' %}
+    <a href="{% url 'add-player' %}"
+       class="toggle">
+        &nbsp;DODAJ ZAWODNIKA&nbsp;</a>&nbsp;
+    <a class="toggle" href="{% url 'delete-player' %}">
+        &nbsp;USUŃ ZAWODNIKÓW&nbsp;</a>
+
+{% endblock %}
+
+

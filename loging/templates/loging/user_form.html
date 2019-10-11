@@ -1,0 +1,20 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+
+<h3 class="headtext">Stwórz konto</h3>
+    <form action="" method="POST"> {% csrf_token %}
+{{ form.errors }}
+        <h3 class="maintext">
+            Login: {{ form.username }}<br><br>
+            Email: {{ form.email }}<br><br>
+            Hasło: {{ form.password1 }}<br><br>
+            Powtórz hasło: {{ form.password2 }}<br><br>
+        </h3>
+
+
+    <input class="toggle" type="submit" value="&nbsp;ZAREJESTRUJ SIĘ&nbsp;">
+
+    </form>
+
+{% endblock %}

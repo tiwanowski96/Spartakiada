@@ -1,0 +1,28 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+
+    <h3 class="headtext">{{ team }}</h3>
+
+    <ol>
+    {% for member in team_members %}
+        <li>
+            <a class="maintext" href="/player_details/{{ member.player.id }}">{{ member }}</a>
+        </li>
+        {% empty %}
+        <a class="maintext">BRAK ZAWODNIKÓW</a>
+    {% endfor %}
+    </ol><br>
+    <a class="toggle" href="/team_add_members/{{ team.id }}"
+       >
+        &nbsp;DODAJ ZAWODNIKÓW&nbsp;</a>
+    <a class="toggle" href="/team_remove_members/{{ team.id }}"
+       >
+        &nbsp;USUŃ ZAWODNIKÓW&nbsp;</a>
+    <br><br>
+    <a class="toggle" href="/team_stats/{{ team.id }}"
+       >
+        &nbsp;STATYSTYKA&nbsp;</a>
+
+{% endblock %}
+style="text-decoration: none;"

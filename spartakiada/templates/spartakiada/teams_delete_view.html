@@ -1,0 +1,18 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+
+    <h3 class="headtext">Drużyny do usunięcia: </h3>
+<form action="" method="POST">{% csrf_token %}
+    <ol>
+    {% for team in team_list %}
+        {% if team.name != "Random" %}
+            <li><a class="maintext">{{ team }} <input class="checkbox" type="checkbox"
+                name="team" value="{{ team }}"></a></li>
+        {% endif %}
+    {% endfor %}
+    </ol>
+    <input class="toggle" type="submit" value="&nbsp;USUŃ&nbsp;">
+</form>
+
+{% endblock %}

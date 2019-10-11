@@ -1,0 +1,27 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+
+    <h3 class="headtext">Lista drużyn: </h3>
+
+    <ol>
+    {% for team in team_list %}
+        {% if team.name != "Random" %}
+        <li>
+            <a href="/team_details/{{team.id}}" class="maintext">{{ team }}</a>
+        </li>
+        {% endif %}
+        {% empty %}
+        <p class="maintext">BRAK DRUŻYN</p>
+    {% endfor %}
+    </ol>
+    <br>
+    <a href="{% url 'add-team' %}"
+       class="toggle">
+        &nbsp;DODAJ DRUŻYNĘ&nbsp;</a>&nbsp;
+    <a href="{% url 'delete-teams' %}"
+       class="toggle">
+        &nbsp;USUŃ DRUŻYNY&nbsp;</a>
+
+{% endblock %}
+style="text-decoration: none

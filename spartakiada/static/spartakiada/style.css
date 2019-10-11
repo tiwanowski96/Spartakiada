@@ -1,0 +1,149 @@
+.nice {
+    width: 200px;
+    background-color: #A9A9A9;
+    text-align: left;
+    font-variant: small-caps;
+    font-size: 21px;
+}
+
+.points {
+    width: 25px;
+    background-color: #C0C0C0;
+    text-align: center;
+    font-variant: small-caps;
+    font-size: 16px;
+}
+
+.bordered {
+    border: 1px solid grey;
+    width: 500px;
+    margin: 15px;
+    -webkit-box-shadow: 0px 0px 10px 0px grey;
+    -moz-box-shadow: 0px 0px 10px 0px grey;
+    box-shadow: 0px 0px 10px 0px grey;
+}
+
+#fight_bordered {
+    border: 1px solid grey;
+    width: 200px;
+    margin: 15px;
+    -webkit-box-shadow: 0px 0px 10px 0px red;
+    -moz-box-shadow: 0px 0px 10px 0px red;
+    box-shadow: 0px 0px 10px 0px red;
+}
+
+#win_bordered {
+    border: 1px solid gold;
+    width: 200px;
+    margin: 15px;
+    -webkit-box-shadow: 0px 0px 20px 0px gold;
+    -moz-box-shadow: 0px 0px 20px 0px gold;
+}
+
+.inputKO {
+    width: 40px;
+    text-align: center;
+    background-color: #C0C0C0;
+    font-variant: small-caps;
+    font-size: 16px;
+}
+
+.container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    margin: 0px;
+    align-items: center;
+    justify-content: left;
+}
+.containeritems {
+    max-height: inherit;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+}
+
+.mouseover {
+    background-color: grey;
+    color: white;
+}
+
+body {
+    background-color: grey;
+}
+
+.toggle {
+    letter-spacing: 1px;
+    color: black;
+    font-size: 17px;
+    border: 2px solid gold;
+    border-radius: 7px;
+    background-color: grey;
+    padding: 2px;
+    text-decoration: none;
+}
+
+ol {
+    font-size: 1.5em;
+}
+
+.maintext {
+    text-decoration: none;
+    color: #8B0000;
+}
+
+.toggle:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.maintext:hover {
+    text-decoration: none;
+    color: #8B0000;
+}
+
+#container {
+    margin-top: 200px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+}
+
+.headtext {
+    letter-spacing: 1px;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+.tabcon {
+    margin: 20px;
+}
+
+.checkbox {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 16px;
+    height: 16px;
+}
+
+.footer {
+    position: relative;
+    height: 150px;
+    clear: both;
+    padding-top: 475px;
+}
+
+.warning {
+    width: 250px;
+    font-size: 14px;
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 10px;
+    background-color: rgb(200, 53, 78);
+    color: rgb(250, 254, 255);
+    text-shadow: rgb(231,76,60) 1px 2px 1px;
+}

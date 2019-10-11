@@ -1,0 +1,42 @@
+{% block content %}
+<br>
+<div class="tabcon">
+    <h3 class="headtext">Drużyny</h3>
+    <table class="stats" style="font-size: 16px;">
+        <thead>
+            <tr style="background-color: #DAA520;">
+                <th>Nazwa</th>
+                <th>Liczba zwycięstw</th>
+                <th>Stoczone rozgrywki</th>
+                <th>Wygrane turnieje</th>
+                <th>Drugie miejsce</th>
+                <th>Udziały w turniejach</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        {% for player in cache %}
+        {% if player.partaker.team %}
+
+            <tr>
+                <td>{{player.partaker}}</td>
+                <td>{{player.won}}</td>
+                <td>{{player.played}}</td>
+                <td>{{player.tournament_won}}</td>
+                <td>{{player.tournament_second}}</td>
+                <td>{{player.tournament_participated}}</td>
+            </tr>
+
+        {% endif %}
+
+        {% endfor %}
+        </tbody>
+    </table>
+<style>
+            table, th, td {
+            border: 1px solid black;
+            }
+    </style>
+</div>
+
+{% endblock %}

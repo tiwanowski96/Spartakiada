@@ -1,0 +1,50 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+
+<h3 class="headtext">{{player.name}}</h3>
+<br>
+    <div>
+        <h4 class="maintext">
+        {% if player.gender == "F" %}
+
+            Zawodniczka wygrała
+
+        {% else %}
+
+            Zawodnik wygrał
+
+        {% endif %}
+
+        {{partaker.duels.won}} na {{partaker.duels.played}} spotkań.
+        </h4>
+
+    </div><br>
+
+    <div>
+        <h4 class="maintext" style="color: black">
+        {% for won in partaker.tournaments_won %}
+
+                {% if player.gender == "F" %}
+
+                    Zwyciężczyni
+
+                {% else %}
+
+                    Zwycięzca
+
+                {% endif %}
+
+            turnieju {{won.tournament_name}} ({{won.tournament_date}}) w <b>{{won.game_name}}</b>.
+
+            Po {{won.lap|add:"-1"}} rundach.<br><br>
+            {% endfor %}
+        <br></h4>
+
+
+
+    </div>
+
+    {% include 'spartakiada/detail_view.html' %}
+
+{% endblock %}

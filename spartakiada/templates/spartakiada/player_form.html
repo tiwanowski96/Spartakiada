@@ -1,0 +1,26 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+    <div class="col-sm-5">
+
+    <h3 class="headtext">Dodaj zawodnika :</h3>
+    <form action="" method="POST">{% csrf_token %}
+        <h3 class="maintext">Imię i nazwisko: </h3>
+        {{ form.name }}&nbsp;
+        <input id="add_player" class="toggle" type="submit" value="&nbsp;DODAJ&nbsp;">
+    </form>
+
+    {% if form.name.errors %}
+    <footer class="footer">
+        <p class="warning"><strong>Taki zawodnik już istnieje</strong></p>
+    </footer>
+    {% endif %}
+
+    </div>
+    <div class="col-sm-5">
+        {% include 'spartakiada/player_list_itself.html' %}
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/alerts.js"></script>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+
+<h1 class="headtext" style="text-align: center; font-size: 2.5em; "><a class="maintext" href="/cup/{{ cup.id }}/">{{ cup.name }}</a></h1><hr>
+    <br><br>
+
+    {% for tournament in tournament_list %}
+        <ol>
+        {% if tournament.individual %}
+            <a class="maintext"><li>{{ tournament.game }} I&nbsp;</a>
+            {% if tournament.participants.count > 0 %}
+                <a class="toggle" href="/knockout/{{ tournament.id }}/{{ tournament.last_lap }}">PRZEGLĄDAJ</a></li><br>
+            {% else %}
+                <a class="toggle" href="/participations_add_to_game/{{ tournament.id }}">DODAJ ZAWODNIKÓW</a></li><br>
+            {% endif %}
+        {% else %}
+            <a class="maintext"><li>{{ tournament.game }} D&nbsp;</a>
+            {% if tournament.participants.count > 0 %}
+                <a class="toggle" href="/knockout/{{ tournament.id }}/{{ tournament.last_lap }}">PRZEGLĄDAJ</a></li><br>
+            {% else %}
+                <a class="toggle" href="/team_add_to_game/{{ tournament.id }}">DODAJ DRUŻYNY</a></li><br>
+            {% endif %}
+        {% endif %}
+        </ol>
+    {% endfor %}
+    <br><br>
+    <a class="toggle" href="/delete_cup/{{ cup.id }}/">&nbsp;USUŃ TURNIEJ&nbsp;</a>
+
+{% endblock %}

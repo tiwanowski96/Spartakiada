@@ -1,0 +1,52 @@
+{% extends 'spartakiada/base.html' %}
+{% load static %}
+{% block content %}
+    <h3 class="headtext">Kilka słów o nas ...</h3>
+        <div style="height: 50px;"></div>
+
+        <div style="display: inline-block; margin-right: 30px;">
+        <img style="margin-bottom: 10px;" src="{% static 'spartakiada/KR.jpg' %}" class="img-circle" alt="Kamil Radomski" width="146" height="146">
+        <div>
+            <p style="display: inline-block"><a class="maintext" href="https://www.linkedin.com/in/kamilmarekradomski/" target="_blank">
+                <img width="40" style="margin-left: 30px;" src="{% static 'spartakiada/lin.gif' %}" /></a></p>&nbsp;
+            <p style="display: inline-block"><a class="maintext" href="https://github.com/natancamenzind" target="_blank">
+                <img width="40" style="margin-right: 30px;" src="{% static 'spartakiada/gh.gif' %}" /></a></p>
+        </div>
+        </div>
+
+        <div style="display: inline-block;">
+        <h3 class="maintext" style="margin-top: 0px;">Kamil Radomski</h3>
+        <p><strong>Junior Backend Developer - Python</strong></p>
+        <p>Wcześniej dziennikarz w Programie Drugim Polskiego Radia</p>
+        <p>Za dziesięć lat prawdopodobnie będzie prowadził komunę <br>
+            pod Pułtuskiem i pracował zdalnie</p>
+        <p><a class="maintext">kamilmarekradomski@gmail.com</a></p>
+
+        </div><br><br><br><br>
+
+        <div style="display: inline-block; margin-right: 30px;">
+        <img style="margin-bottom: 10px;" src="{% static 'spartakiada/TI.jpg' %}" class="img-circle" alt="Tomasz Iwanowski" width="146" height="146">
+        <div>
+            <p style="display: inline-block"><a class="maintext" href="https://www.linkedin.com/in/tomasz-iwanowski/" target="_blank">
+                <img width="40" style="margin-left: 30px;" src="{% static 'spartakiada/lin.gif' %}" /></a></p>&nbsp;
+            <p style="display: inline-block"><a class="maintext" href="https://github.com/tiwanowski96" target="_blank">
+                <img width="40" style="margin-right: 30px;" src="{% static 'spartakiada/gh.gif' %}" /></a></p>
+        </div>
+        </div>
+
+        <div style="display: inline-block;">
+        <h3 class="maintext" style="margin-top: 0px;">Tomasz Iwanowski</h3>
+        <p><strong>Junior Backend Developer - Python</strong></p>
+        <p>Fanatyk lotnictwa, szybkich kobiet i pięknych samochodów</p>
+        <p>Dlaczego postanowił się przebranżowić ?<br>"Płatne zabójstwa za bardzo brudzą sumienie"</p>
+        <p><a class="maintext">tiwanowski96@gmail.com</a></p>
+
+        </div><br><br><br><br>
+
+        <div style="margin-left: 50px;">
+        <h4 style="" class="maintext">Damian Więch</h4>
+        <p>Graphic Designer</p>
+        <p><a class="maintext">wiech.damian@gmail.com</a></p>
+        </div>
+
+{% endblock %}

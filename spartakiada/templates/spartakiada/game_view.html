@@ -1,0 +1,25 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+
+    <h3 class="headtext">Lista dyscyplin: </h3>
+
+    <ol>
+    {% for game in game_list %}
+        <li>
+            <a class="maintext">{{ game.name }}</a>
+        </li>
+        {% empty %}
+        <p class="maintext">BRAK DYSCYPLIN</p>
+    {% endfor %}
+    </ol>
+    <br>
+    <a href="/add_game/"
+       class="toggle">
+        &nbsp;DODAJ DYSCYPLINĘ&nbsp;</a>&nbsp;
+    <a href="/delete_games/"
+       class="toggle">
+        &nbsp;USUŃ DYSCYPLINY&nbsp;</a>
+
+{% endblock %}
+style="text-decoration: none

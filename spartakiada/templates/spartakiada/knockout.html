@@ -1,0 +1,64 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+
+
+<link rel="stylesheet" href="/static/spartakiada/style.css">
+
+
+    <h1 class="headtext" style="text-align: center; font-size: 2.5em; "><a class="maintext" href="/cup/{{ tournament.cup.id }}/">{{ tournament.cup.name }}</a></h1><hr>
+    <br><br>
+<form action='#' method='POST'>
+    {% csrf_token %}
+
+    <h2 class="headtext">Dyscyplina <a class="maintext">{{tournament.game.name}}</a></h2><br>
+        <div class="container"></div>
+
+    {% for stage in stages %}
+        {% if stage.player1.partaker == stage.player2.partaker %}
+            <table class='{{stage.lap}}' id='win_bordered'>
+                <tr>
+                    <td class='nice {{stage.player1.partaker}}'><b>&nbsp;
+                        {{stage.player1.partaker}}</b></td>
+                </tr>
+            <table>
+        {% elif stage.lap|add:"0" == lap|add:"0" %}
+            <table class="{{stage.lap}}" id="fight_bordered">
+
+                <tr>
+                    <td class="nice {{stage.player1.partaker}}">
+                        &nbsp;{{stage.player1.partaker}}</td>
+                    <td class="points"><input class="inputKO" type="number" name="{{stage.player1.partaker}}" value="{{stage.points1}}"></td>
+                </tr>
+                <tr>
+                    <td class="nice {{stage.player2.partaker}}">
+                        &nbsp;{{stage.player2.partaker}}</td>
+                    <td class="points"><input class="inputKO" type="number" name="{{stage.player2.partaker}}" value="{{stage.points2}}"></td>
+                </tr>
+
+            </table>
+        {% elif stage.lap|add:"0" != lap|add:"0" %}
+            <table class="{{stage.lap}}">
+                <tr>
+                    <td class="nice {{stage.player1.partaker}}">&nbsp;
+                        {{stage.player1.partaker}}</td>
+                    <td class="points">{{stage.points1}}</td>
+                </tr>
+                <tr>
+                    <td class="nice {{stage.player2.partaker}}">&nbsp;
+                        {{stage.player2.partaker}}</td>
+                    <td class="points">{{stage.points2}}</td>
+                </tr>
+            </table>
+        {% else %}
+        <p>Coś poszło nie tak</p>
+
+        {% endif %}
+    {% endfor %}
+        <br><input class="toggle" type='submit' value='ZATWIERDŹ PUNKTY'>
+
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/app.js"></script>
+{% endblock %}

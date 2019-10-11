@@ -1,0 +1,11 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+    <br>
+    <form action="" method="post">{% csrf_token %}
+        <h1 class="headtext" style="text-align: center">Nastąpi usunięcie turnieju: <a class="maintext">{{ object }}</a></h1><br>
+        <div style="margin: 0 auto; text-align: center">
+        <input class="toggle" type="submit" value="&nbsp;ZATWIERDŹ&nbsp;" />
+        </div>
+    </form>
+{% endblock %}

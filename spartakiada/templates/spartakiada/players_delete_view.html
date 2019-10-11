@@ -1,0 +1,17 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+
+    <h3 class="headtext">Zawodnicy do usunięcia: </h3>
+<form action="" method="POST">{% csrf_token %}
+    <ol>
+    {% for player in players %}
+        <li><a class="maintext">{{player}} <input class="checkbox" type="checkbox"
+            name="player" value="{{player}}"></a></li>
+    {% endfor %}
+    </ol>
+    <input class="toggle" type="submit" value="&nbsp;USUŃ&nbsp;">
+</form>
+
+{% endblock %}
+

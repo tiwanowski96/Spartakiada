@@ -1,0 +1,26 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+{% block result%}
+
+{% endblock %}
+
+    <h3 class="headtext">Dodaj drużynę</h3>
+    <form action="" method="POST">{% csrf_token %}
+        <h3 class="maintext">Nazwa drużyny: </h3>
+        <input id="team_name" type="text" name="team_name"/>
+        <h3 class="maintext">Zawodnicy: </h3>
+        <ol>
+    {% for player in players %}
+        <li><label>{{ player }} <input class="checkbox" type="checkbox"
+            name="player" value="{{ player }}"></label></li>
+
+    {% empty %}
+            <p class="maintext">Najpierw dodaj zawodników</p>
+    {% endfor %}
+    </ol>
+        <input class="toggle" type="submit" value="&nbsp;DODAJ&nbsp;">
+    </form>
+    
+
+{% endblock %}
