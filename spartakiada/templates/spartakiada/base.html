@@ -19,7 +19,7 @@
                 <a class="navbar-brand" href="/"><img width="300" src="{% static 'spartakiada/logo.gif' %}" /></a>
             </div>
             <div class="loginContainer">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right" style="float: right;">
                     {% if  user.is_authenticated %}
                     <li><a>{{ user }}</a></li>
                     <li><a href="/logout">
@@ -63,8 +63,8 @@
         {% endblock %}
         </div>
 
-        <nav class="navbar navbar-inverse navbar-fixed-bottom">
-            <div class="nav navbar-nav navbar-right">
+        <nav class="navbar navbar-inverse navbar-fixed-bottom" style="max-height: 51px;">
+            <div class="nav navbar-nav navbar-right" style="text-align: center;">
             <p class="navbar-text" style="text-transform: uppercase;">Iwanowski & Radomski Production</p>
             <p class="navbar-text" style="text-transform: uppercase;">2017</p>
             <p class="navbar-text" style="text-transform: uppercase;">v.1.0&nbsp;&nbsp;&nbsp;</p>
