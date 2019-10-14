@@ -1,38 +1,32 @@
 {% extends 'spartakiada/base.html' %}
 
 {% block content %}
-<div class="row" style="margin-left: 0px; margin-right: 0px; margin-top: 110px; height: 100%">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-7">
-        <h1 class="headtext" style="font-size: 3em;">
+<div class="descriptionContainer">
+    <h1 class="headtext" style="font-size: 3em;">
 
-            Olimpijskie rozgrywki w zasięgu ręki
+        Olimpijskie rozgrywki w zasięgu ręki
 
-        </h1><br>
-        <h2 class="maintext">
+    </h1><br>
+    <h2 class="maintext">
 
-            Piłkarzyki w pracy? Counter Strike po godzinach? Koszykówka na osiedlu?
+        Piłkarzyki w pracy? Counter Strike po godzinach? Koszykówka na osiedlu?
 
-        </h2>
-        <h3>
-            <br><br>
-            <p>Nie ważne w co grasz. Tutaj możesz szybciej i prościej zorganizować turniej w co tylko chcesz.</p><br>
-            <p>Dodaj znajomych i wybierz dziedzinę. My zajmiemy się przygotowaniem losowej drabinki pucharowej,
-                przechowaniem historii i prezentacją statystyk.</p><br>
-            <p>Jest was za mało, żeby każdy mógł zagrać? Losowo przydzielmy niektórym przeciwnika, z&nbsp;którym nie
-                sposób przegrać.</p><br>
-            <p>Chcesz móc grać raz w zespołach, raz indywidualnie? Nie ma problemu! Wszystkie
-                możliwości są dostępne tak dla zawodników indywidualnych, jak i dla drużyn.</p><br>
-            <p>Wszystko za darmo, bez spamu i reklam!</p><br>
+    </h2>
+    <h3>
+        <br><br>
+        <p>Nie ważne w co grasz. Tutaj możesz szybciej i prościej zorganizować turniej w co tylko chcesz.</p><br>
+        <p>Dodaj znajomych i wybierz dziedzinę. My zajmiemy się przygotowaniem losowej drabinki pucharowej,
+            przechowaniem historii i prezentacją statystyk.</p><br>
+        <p>Jest was za mało, żeby każdy mógł zagrać? Losowo przydzielmy niektórym przeciwnika, z&nbsp;którym nie
+            sposób przegrać.</p><br>
+        <p>Chcesz móc grać raz w zespołach, raz indywidualnie? Nie ma problemu! Wszystkie
+            możliwości są dostępne tak dla zawodników indywidualnych, jak i dla drużyn.</p><br>
+        <p>Wszystko za darmo, bez spamu i reklam!</p><br>
 
-        </h3>
-
-    </div>
-    <div class="col-sm-2"></div>
-    <div class="col-sm-2" style="height: 100vh; border-left: 2px solid #080808;">
-
-        <br>
-        <div class="affix">
+    </h3>
+</div>
+<div class="scoreMenuContainer">
+    <div>
         <ol><h3 class="headtext" style="font-size: 16px;">Ostatnie turnieje:</h3>
             <li style="font-size: 15px;"><a href="/cup/{{ cup.0.id }}" class="maintext" style="font-size: 15px;">{{ cup.0 }}</a></li>
             <li style="font-size: 15px;"><a href="/cup/{{ cup.1.id }}" class="maintext" style="font-size: 15px;">{{ cup.1 }}</a></li>
@@ -49,8 +43,6 @@
             <li style="font-size: 15px;"><a href="/team_details/{{ teams.1.partaker.team.id }}" class="maintext" style="font-size: 15px;">{{ teams.1.partaker }}</a></li>
             <li style="font-size: 15px;"><a href="/team_details/{{ teams.2.partaker.team.id }}" class="maintext" style="font-size: 15px;">{{ teams.2.partaker }}</a></li>
         </ol>
-        </div>
-
     </div>
 </div>
 {% endblock %}

@@ -76,7 +76,6 @@ urlpatterns = [
         name='team-stats'),
     url(r'^delete_cup/(?P<cup_id>(\d)+)', views.CupDeleteView.as_view(),
         name="cup-delete"),
-
     url(r'^register/$', loging.UserCreateView.as_view(),
         name='register'),
     url(r'^login/$', loging.UserLoginView.as_view(),

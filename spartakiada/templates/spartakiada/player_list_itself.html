@@ -1,16 +1,16 @@
 {% block content %}
 
- <h3 class="headtext">Lista zawodników: </h3>
+<h3 class="headtext">Lista zawodników: </h3>
 
-   <ol>
-    {% for player in players %}
-        <li>
-            <a href="{% url 'player' id=player.id %}" class="maintext">{{ player.name }}</a>
-        </li>
-        {% empty %}
-        <p class="maintext">BRAK ZAWODNIKÓW</p>
-    {% endfor %}
-   </ol>
-    <br>
+<ol>
+{% for player in players %}
+    <li>
+        <a href="{% url 'player' id=player.id %}" class="maintext">{{ player.name }}</a>
+    </li>
+    {% empty %}
+    <p class="maintext">BRAK ZAWODNIKÓW</p>
+{% endfor %}
+</ol>
+<br>
 
 {% endblock %}
