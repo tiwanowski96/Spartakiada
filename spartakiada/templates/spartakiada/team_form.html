@@ -12,7 +12,7 @@
         <h3 class="maintext">Zawodnicy: </h3>
         <ol>
     {% for player in players %}
-        <li><label>{{ player }} <input class="checkbox" type="checkbox"
+        <li style="align-items: center;"><label>{{ player }} <input class="checkbox" style="display: inherit; margin: 0;" type="checkbox"
             name="player" value="{{ player }}"></label></li>
 
     {% empty %}

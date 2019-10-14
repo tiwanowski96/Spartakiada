@@ -7,7 +7,7 @@
     <ol>
     {% for team in team_list %}
         {% if team.name != "Random" %}
-            <li><a class="maintext">{{ team }} <input class="checkbox" type="checkbox"
+            <li style="align-items: center;"><a class="maintext">{{ team }} <input class="checkbox" style="display: inherit; margin: 0;" type="checkbox"
                 name="team" value="{{ team }}"></a></li>
         {% endif %}
     {% endfor %}

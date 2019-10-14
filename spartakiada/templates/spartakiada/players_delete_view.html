@@ -6,7 +6,7 @@
 <form action="" method="POST">{% csrf_token %}
     <ol>
     {% for player in players %}
-        <li><a class="maintext">{{player}} <input class="checkbox" type="checkbox"
+        <li style="align-items: center;"><a class="maintext">{{player}} <input class="checkbox" style="display: inherit; margin: 0;"type="checkbox"
             name="player" value="{{player}}"></a></li>
     {% endfor %}
     </ol>
