@@ -17,11 +17,12 @@ from django.conf import settings
 from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.urls import path
 from spartakiada import views
 from loging import views as loging
 
-
 urlpatterns = [
+    path('admin/', admin.site.urls),
     # url(r'^admin/', admin.urls),
     url(r'^$', views.MenuView.as_view(),
         name='menu'),
