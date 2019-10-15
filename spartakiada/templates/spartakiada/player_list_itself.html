@@ -5,7 +5,7 @@
 <ol>
 {% for player in players %}
     <li>
-        <a href="{% url 'player' id=player.id %}" class="maintext">{{ player.name }}</a>
+        <a href="{% url 'spartakiada:player' id=player.id %}" class="maintext">{{ player.name }}</a>
     </li>
     {% empty %}
     <p class="maintext">BRAK ZAWODNIKÓW</p>

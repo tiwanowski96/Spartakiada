@@ -3,10 +3,10 @@
 {% block content %}
 
     {% include 'spartakiada/player_list_itself.html' %}
-    <a href="{% url 'add-player' %}"
+    <a href="{% url 'spartakiada:add-player' %}"
        class="toggle">
         &nbsp;DODAJ ZAWODNIKA&nbsp;</a>&nbsp;
-    <a class="toggle" href="{% url 'delete-player' %}">
+    <a class="toggle" href="{% url 'spartakiada:delete-player' %}">
         &nbsp;USUŃ ZAWODNIKÓW&nbsp;</a>
 
 {% endblock %}
