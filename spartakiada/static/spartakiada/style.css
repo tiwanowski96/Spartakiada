@@ -176,7 +176,7 @@ ol {
 .loginContainer {
     display: table-cell;
     width: inherit;
-    padding-right: 25vh;
+    padding-right: 100px;
 }
 
 .siteWrapper {
