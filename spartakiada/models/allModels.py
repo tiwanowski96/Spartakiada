@@ -9,7 +9,7 @@ class Player(models.Model):
         return '%s' % self.name
 
     def get_absolute_url(self):
-        return reverse('players')
+        return reverse('spartakiada:players')
 
 
     """
@@ -175,7 +175,7 @@ class Cup(models.Model):
         return '%s' % self.name
 
     def get_absolute_url(self):
-        return reverse('cup-add-games', kwargs={'cup_id': self.id})
+        return reverse('spartakiada:cup-add-games', kwargs={'cup_id': self.id})
 
 
 class Tournament(models.Model):
