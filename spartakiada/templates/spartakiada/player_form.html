@@ -1,7 +1,7 @@
 {% extends 'spartakiada/base.html' %}
 
 {% block content %}
-    <div class="col-sm-5">
+    <div class="col-5">
 
     <h3 class="headtext">Dodaj zawodnika :</h3>
     <form action="" method="POST">{% csrf_token %}
@@ -11,13 +11,13 @@
     </form>
 
     {% if form.name.errors %}
-    <footer class="footer">
+    <footer class="warningContainer">
         <p class="warning"><strong>Taki zawodnik już istnieje</strong></p>
     </footer>
     {% endif %}
 
     </div>
-    <div class="col-sm-5" style="margin-bottom: 70px;">
+    <div class="col-5">
         {% include 'spartakiada/player_list_itself.html' %}
     </div>
 

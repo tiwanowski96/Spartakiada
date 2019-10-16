@@ -6,38 +6,27 @@
     <head>
         <title>Spartakiada</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="{% static 'spartakiada/style.css' %}">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'spartakiada/style.css' %}">
     </head>
-    <body style="background-color: lightgrey; margin: 10px;">
-
-        <nav class="navbar navbar-inverse navbar-fixed-top" style="height: 110px; width: 100%; display: table; table-layout: fixed;">
-            <div class="logoContainer">
-                <a class="navbar-brand" href="/"><img width="300" src="{% static 'spartakiada/logo.gif' %}" /></a>
+    <body>
+        <header class="siteHeader col-1">
+            <div class="logoContainer col-2">
+                <a href="/"><img src="{% static 'spartakiada/logo.gif' %}" /></a>
             </div>
-            <div class="loginContainer">
-                <ul class="nav navbar-nav navbar-right" style="float: right;">
-                    {% if  user.is_authenticated %}
-                    <li><a>{{ user }}</a></li>
-                    <li><a href="/logout">
-                        <span class="glyphicon glyphicon-log-out"></span>
-                        WYLOGUJ</a></li>
-                    {% else %}
-                    <li><a href="/register/">
-                        <span class="glyphicon glyphicon-user"></span>
-                        ZAREJESTRUJ</a></li>
-                    <li><a href="/login/">
-                        <span class="glyphicon glyphicon-log-in"></span>
-                        ZALOGUJ</a></li>
-                    {% endif %}
+            <div class="listMenu col-3">
+                <ul>
+                    <a href="/players/"><li>ZAWODNICY</li></a>
+                    <a href="/teams/"><li>DRUŻYNY</li></a>
+                    <a href="/games/"><li>DYSCYPLINY</li></a>
+                    <a href="/add_cup/"><li>DODAJ TURNIEJ</li></a>
+                    <a href="/cups_list/"><li>TURNIEJE</li></a>
+                    <a href="/stats/"><li>RANKING</li></a>
+                    <a href="/about/"><li>O NAS</li></a>
                 </ul>
             </div>
-            <div class="listMenu">
-                <div id="menuToggle">
-
+            <div id="menuToggle" class="col-3">
+                <div class="input">
                     <input type="checkbox" />
                     
                     <span></span>
@@ -55,21 +44,40 @@
                     </ul>
                 </div>
             </div>
-        </nav>
-
-        <div id="container">
-        {% block content %}
-
-        {% endblock %}
-        </div>
-
-        <nav class="navbar navbar-inverse navbar-fixed-bottom" style="max-height: 51px;">
-            <div class="nav navbar-nav navbar-right" style="text-align: center;">
-            <p class="navbar-text" style="text-transform: uppercase;">Iwanowski & Radomski Production</p>
-            <p class="navbar-text" style="text-transform: uppercase;">2017</p>
-            <p class="navbar-text" style="text-transform: uppercase;">v.1.0&nbsp;&nbsp;&nbsp;</p>
+            <div class="loginContainer col-4">
+                <ul>
+                    {% if  user.is_authenticated %}
+                    <li><a>{{ user }}</a></li>
+                    <li><a href="/logout">
+                        <span class="glyphicon glyphicon-log-out"></span>
+                        &nbsp;WYLOGUJ</a></li>
+                    {% else %}
+                    <li><a href="/register/">
+                        <span class="glyphicon glyphicon-user"></span>
+                        &nbsp;ZAREJESTRUJ</a></li>
+                    <li><a href="/login/">
+                        <span class="glyphicon glyphicon-log-in"></span>
+                        &nbsp;ZALOGUJ</a></li>
+                    {% endif %}
+                </ul>
             </div>
-        </nav>
+        </header>
+        <main>
+            <div id="container" class="col-1">
+                {% block content %}
+
+                {% endblock %}
+            </div>
+        </main>
+        <footer class="siteFooter col-1">
+            <div class="footerRightBox">
+                IWANOWSKI & RADOMSKI PRODUCTION &nbsp;&nbsp;
+                since 2017 &nbsp;&nbsp;
+                V 1.0
+            </div>
+        </footer>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
     </body>
 </html>
