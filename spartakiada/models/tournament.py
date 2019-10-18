@@ -2,48 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 
-class Player(models.Model):
-    name = models.CharField(max_length=128, unique=True)
-
-    def __str__(self):
-        return '%s' % self.name
-
-    def get_absolute_url(self):
-        return reverse('spartakiada:players')
-
-
-    """
-    Not perfect way to get players gender basing on their first name.
-    Works only for polish names.
-    """
-    @property
-    def gender(self):
-        male_names = ["Bonawentura", "Kuba", "Kosma", "Attyla", "Barnaba", "Seba", "Dyzma", "Zawisza"]
-        female_names = ["Miriam", "Nicole", "Noemi", "Beatrycze", "Nel"]
-        name = self.name.partition(' ')[0]
-        if name.endswith("a") and name not in male_names or name in female_names:
-            return "F"
-        else:
-            return "M"
-
-
-
-class Team(models.Model):
-    name = models.CharField(max_length=128, unique=True)
-    mates = models.ManyToManyField(Player, through='Member')
-
-    def __str__(self):
-        return '%s' % self.name
-
-
-# enables players to be team members
-class Member(models.Model):
-    player = models.ForeignKey(Player, on_delete=models.CASCADE)
-    team = models.ForeignKey(Team, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return '%s' % self.player.name
-
+from spartakiada.models import Cup, Game, Player, Team
 
 # allow us to use the same functions for players and teams
 class Partaker(models.Model):
@@ -155,28 +114,8 @@ class Partaker(models.Model):
             parts.append(part.tournament.cup.id)
         return len(set(parts))
 
-
-# type of game/sport
-class Game(models.Model):
-    name = models.CharField(max_length=128, unique=True)
-
-    def __str__(self):
-        return '%s' % self.name
-
-
-class Cup(models.Model):
-    name = models.CharField(max_length=128)
-    date = models.DateField()
-
     class Meta:
-        unique_together = ("name", "date")
-
-    def __str__(self):
-        return '%s' % self.name
-
-    def get_absolute_url(self):
-        return reverse('spartakiada:cup-add-games', kwargs={'cup_id': self.id})
-
+        app_label = 'spartakiada'
 
 class Tournament(models.Model):
     participants = models.ManyToManyField('Partaker', through='Participation')
@@ -220,11 +159,15 @@ class Tournament(models.Model):
         last_lap = Duel.objects.filter(tournament=self).last().lap
         return last_lap
 
+    class Meta:
+        app_label = 'spartakiada'
 
 class Participation(models.Model):
     partaker = models.ForeignKey(Partaker, null=True, on_delete=models.CASCADE)
     tournament = models.ForeignKey(Tournament, on_delete=models.CASCADE)
 
+    class Meta:
+        app_label = 'spartakiada'
 
 # atomic event of all games, which is a single duel of two players
 class Duel(models.Model):
@@ -235,12 +178,6 @@ class Duel(models.Model):
     points2 = models.IntegerField(null=True)
     lap = models.IntegerField(null=True)
 
+    class Meta:
+        app_label = 'spartakiada'
 
-# model used for stats
-class PlayerCache(models.Model):
-    partaker = models.ForeignKey(Partaker, default=None, on_delete=models.CASCADE)
-    won = models.IntegerField(null=True)
-    played = models.IntegerField(null=True)
-    tournament_won = models.IntegerField(null=True)
-    tournament_second = models.IntegerField(null=True)
-    tournament_participated = models.IntegerField(null=True)

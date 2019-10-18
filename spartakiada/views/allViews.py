@@ -7,7 +7,8 @@ from django.utils.decorators import method_decorator
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import CreateView, DeleteView, ListView, TemplateView
-from spartakiada.models import Player, Tournament, Participation, Duel, Team, Member, Cup, Game, Partaker, PlayerCache
+from spartakiada.models import Player, Tournament, Team, Member, Cup, Game, PlayerCache
+from spartakiada.models.tournament import *
 from spartakiada.cron import make_players_cache
 
 

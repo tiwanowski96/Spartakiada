@@ -1,5 +1,5 @@
 from django import forms
-from .models import Player, Team, Game, Cup
+from spartakiada.models import Player, Team, Game, Cup
 
 
 class PlayerAddForm(forms.ModelForm):

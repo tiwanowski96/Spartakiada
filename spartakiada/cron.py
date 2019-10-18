@@ -1,6 +1,7 @@
 import kronos
 
-from .models import PlayerCache, Partaker, Player
+from spartakiada.models import PlayerCache, Tournament, Player
+from spartakiada.models.tournament import Duel, Partaker, Tournament, Participation
 
 """
 We're using kronos to generate updates of stats, which takes few seconds when made on demand.
