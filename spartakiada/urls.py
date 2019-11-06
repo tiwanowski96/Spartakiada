@@ -48,6 +48,8 @@ urlpatterns = [
     url(r'^next_round/(?P<tournament_id>(\d)+)/(?P<lap>(\d)+)/$', views.knockout_next_round),
     url(r'^cup/(?P<cup_id>(\d)+)', views.CupView.as_view(),
         name='cup'),
+    url(r'^cup/rank/(?P<cup_id>(\d)+)', views.CupRankView.as_view(),
+        name='cupRank'),
     url(r'^cups_list/$', views.CupsListView.as_view(),
         name='cups'),
     url(r'^participations_add_to_game/(?P<tournament_id>(\d)+)', views.ParticipationsAddToGameView.as_view(),

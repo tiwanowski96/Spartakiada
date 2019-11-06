@@ -1,0 +1,16 @@
+{% extends 'spartakiada/base.html' %}
+
+{% block content %}
+
+    <br>
+        <h1 class="headtext" style="text-align: center">TA OPCJA ZOSTAŁA WYŁĄCZONA Z POWODU WCZEŚNIEJSZYCH DZIAŁAŃ</h1><br>
+        <div style="margin: 0 auto; text-align: center">
+            <button class="toggle" onclick="goBack()">&nbsp;COFNIJ&nbsp;</button>
+        </div>
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+{% endblock %}

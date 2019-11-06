@@ -83,7 +83,6 @@ class PlayerDeleteView(View):
             player.delete()
         return redirect('/players/')
 
-
 class PlayerDetailsView(View):
 
     def get(self, request, id):

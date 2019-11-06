@@ -1,0 +1,69 @@
+{% extends 'spartakiada/base.html' %}
+{% load pluralize_pl %}
+
+
+{% block content %}
+
+<h1 class="headtext" style="text-align: center; font-size: 2.5em; "><a class="maintext" href="/cup/{{ cup.id }}/">{{ cup.name }}</a></h1><hr>
+
+    <div class="tableContainer">
+    {% for key, value in cupScore.items %}
+    <div class="tournamentTable">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">{{key.game.name}}</th>
+            </tr>
+            <tr>
+                <th>Zawodnik</th>
+                <th>Punkty</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for k, val in value %}
+                <tr>
+                    <td>{{ k }}</td>
+                    <td>{{ val }}</td>
+                </tr>
+            {% empty %}
+                    <tr>
+                        <td colspan="2">Uzupełnij wyniki w drabince</td>
+                    </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    {% endfor %}
+    </div>
+
+<div class="GPTableContainer">
+    <div class="grandPrixTable">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">GRAND PRIX</th>
+                </tr>
+                <tr>
+                    <th>ZAWODNIK</th>
+                    <th>PUNKTY</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ol>
+                {% for name, score in GPDict %}
+                    <tr>
+                        <td>{{ name }}</td>
+                        <td>{{ score }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="2">Uzupełnij wyniki w drabince</td>
+                    </tr>
+                {% endfor %}
+                </ol>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

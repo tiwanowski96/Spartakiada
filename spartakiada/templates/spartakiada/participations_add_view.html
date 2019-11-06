@@ -6,13 +6,14 @@
     <br><br>
     <h3 class="headtext">Dodaj zawodników do dyscypliny: <a class="maintext">{{ tournament.game }}</a></h3><br>
     <form action="" method="POST">{% csrf_token %}
-        <ol>
-            {% for player in player_list %}
-            <li style="align-items: center;"><a class="maintext">{{ player }}</a><input class="checkbox" type="checkbox" style="display: inline; margin: 0; margin-left: 5px;" name="player" value='{{ player }}' checked></li>
-            {% endfor %}
-
-        </ol><br>
-        zaznacz wszystkich<input id="select-all" type="checkbox" name="select-all" checked><br>
+        <div class="listContainer">
+            <ol>
+                {% for player in player_list %}
+                <li style="align-items: center;"><a class="maintext">{{ player }}</a><input class="checkbox" type="checkbox" style="display: inline; margin: 0; margin-left: 5px;" name="player" value="{{ player }}" checked></li>
+                {% endfor %}
+            </ol>
+        </div>
+        zaznacz wszystkich <input id="select-all" type="checkbox" name="select-all" checked><br>
         <input class="toggle" type='submit' value='&nbsp;Dodaj&nbsp'/>
     </form>
 

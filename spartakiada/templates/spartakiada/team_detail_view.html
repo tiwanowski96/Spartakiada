@@ -4,15 +4,17 @@
 
     <h3 class="headtext">{{ team }}</h3>
 
-    <ol>
-    {% for member in team_members %}
-        <li>
-            <a class="maintext" href="/player_details/{{ member.player.id }}">{{ member }}</a>
-        </li>
-        {% empty %}
-        <a class="maintext">BRAK ZAWODNIKÓW</a>
-    {% endfor %}
-    </ol><br>
+    <div class="listContainer">
+        <ol>
+        {% for member in team_members %}
+            <li>
+                <a class="maintext" href="/player_details/{{ member.player.id }}">{{ member }}</a>
+            </li>
+            {% empty %}
+            <a class="maintext">BRAK ZAWODNIKÓW</a>
+        {% endfor %}
+        </ol>
+    </div>
     <a class="toggle" href="/team_add_members/{{ team.id }}"
        >
         &nbsp;DODAJ ZAWODNIKÓW&nbsp;</a>

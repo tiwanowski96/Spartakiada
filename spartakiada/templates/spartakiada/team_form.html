@@ -10,15 +10,17 @@
         <h3 class="maintext">Nazwa drużyny: </h3>
         <input id="team_name" type="text" name="team_name"/>
         <h3 class="maintext">Zawodnicy: </h3>
-        <ol>
-    {% for player in players %}
-        <li style="align-items: center;"><label>{{ player }} <input class="checkbox" style="display: inherit; margin: 0;" type="checkbox"
-            name="player" value="{{ player }}"></label></li>
+        <div class="listContainer">
+            <ol>
+            {% for player in players %}
+                <li style="align-items: center;"><label>{{ player }} <input class="checkbox" style="display: inherit; margin: 0;" type="checkbox"
+                    name="player" value="{{ player }}"></label></li>
 
-    {% empty %}
-            <p class="maintext">Najpierw dodaj zawodników</p>
-    {% endfor %}
-    </ol>
+            {% empty %}
+                    <p class="maintext">Najpierw dodaj zawodników</p>
+            {% endfor %}
+            </ol>
+        </div>
         <input class="toggle" type="submit" value="&nbsp;DODAJ&nbsp;">
     </form>
     

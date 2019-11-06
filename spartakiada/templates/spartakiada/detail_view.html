@@ -4,9 +4,11 @@
         <div>
             <h4 class="maintext">
             {% if player.gender == "F" %}
-                Zawodniczka była druga
+                {{ player.name }} zajęła drugie miejsce
+            {% elif partaker.team != null %}
+                Drużyna była druga
             {% else %}
-                Zawodnik był drugi
+                {{ player.name }} zajął drugie miejsce
             {% endif %}
 
             {% if partaker.was_second == 1 %}

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'loging',
     'kronos',
     'spartakiada',
+    'pluralize_pl',
 ]
 
 MIDDLEWARE = [

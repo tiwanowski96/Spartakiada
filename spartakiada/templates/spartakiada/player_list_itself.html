@@ -2,15 +2,16 @@
 
 <h3 class="headtext">Lista zawodników: </h3>
 
-<ol>
-{% for player in players %}
-    <li>
-        <a href="{% url 'spartakiada:player' id=player.id %}" class="maintext">{{ player.name }}</a>
-    </li>
-    {% empty %}
-    <p class="maintext">BRAK ZAWODNIKÓW</p>
-{% endfor %}
-</ol>
-<br>
+<div class="listContainer">
+    <ol>
+    {% for player in players %}
+        <li>
+            <a href="{% url 'spartakiada:player' id=player.id %}" class="maintext">{{ player.name }}</a>
+        </li>
+        {% empty %}
+        <p class="maintext">BRAK ZAWODNIKÓW</p>
+    {% endfor %}
+    </ol>
+</div>
 
 {% endblock %}

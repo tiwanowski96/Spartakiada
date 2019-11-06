@@ -5,3 +5,4 @@ from .team import *
 from .game import *
 from .cup import *
 from .tournament import *
+from .cupRank import *

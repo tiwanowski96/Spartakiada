@@ -1,5 +1,12 @@
 body {
-    background-color: rgb(226, 226, 226);
+    background: rgba(255,255,255,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(250,250,250,1) 16%, rgba(230,230,230,1) 79%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,1)), color-stop(16%, rgba(250,250,250,1)), color-stop(79%, rgba(230,230,230,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(250,250,250,1) 16%, rgba(230,230,230,1) 79%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(250,250,250,1) 16%, rgba(230,230,230,1) 79%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(250,250,250,1) 16%, rgba(230,230,230,1) 79%);
+    background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(250,250,250,1) 16%, rgba(230,230,230,1) 79%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=1 );
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -87,14 +94,27 @@ body {
 }
 
 .toggle {
-    letter-spacing: 1px;
-    color: black;
-    font-size: 17px;
-    border: 2px solid gold;
-    border-radius: 7px;
-    background-color: grey;
-    padding: 5px;
     text-decoration: none;
+    font-size: 16px;
+    background-color: #C0C0C0;
+
+    border-radius: 0.5em;
+    padding: 0.2em;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    margin: 0.5em;
+    color: #222;
+    box-shadow: 3px 3px 5px gray;
+}
+
+.toggle:hover {
+    text-decoration: none;
+    color: #8B0000;
+}
+
+.toggle:active {
+    text-decoration: none;
+    color: #8B0000
 }
 
 ol {
@@ -106,11 +126,6 @@ ol {
     color: #8B0000;
 }
 
-.toggle:hover {
-    text-decoration: none;
-    color: black;
-}
-
 .maintext:hover {
     text-decoration: none;
     color: #8B0000;
@@ -119,8 +134,8 @@ ol {
 #container {
     display: inline-block;
     margin-top: 180px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 3em;
+    padding-left: 3em;
     margin-bottom: 25px;
 }
 
@@ -169,11 +184,12 @@ ol {
 .scoreMenuContainer {
     float: right;
     height: 100%;
-    min-height: 100vh;
     width: 20%;
     text-align: left;
     margin-bottom: 1em;
     padding-left: 2em;
+    box-shadow: 6px 6px 10px gray;
+    padding-bottom: 1em;
 }
 
 .siteWrapper {
@@ -285,8 +301,8 @@ ol {
 
 #menu {
     position: absolute;
-    width: 300px;
-    left: 20px;
+    width: 310px;
+    left: 27px;
     margin: -100px 0 0 -50px;
     padding: 50px;
     padding-top: 125px;
@@ -439,4 +455,111 @@ ol {
     .scoreMenuContainer {
         width: 30%;
     }
+}
+
+.tournamentTable {
+    padding: 20px;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.tournamentTable table {
+    box-shadow: 6px 6px 5px gray;
+}
+
+.tableContainer {
+    width: 100%;
+    display: grid;
+    grid-row: auto auto;
+    grid-column-gap: 10vh;
+    grid-row-gap: 3em;
+    grid-template-columns: 50% 50%;
+    align-items:center;
+    justify-content:center;
+}
+
+.tournamentTable th{
+    border: 2px solid black;
+    text-align: center;
+    font-size: 16px;
+    padding: 0.3em;
+    padding-right: 4em;
+    padding-left: 4em;
+}
+
+.tournamentTable td{
+    border: 2px solid black;
+    text-align: center;
+    font-size: 14px;
+    padding: 0.3em;
+}
+
+.tournamentTable thead {
+    background-color: #DAA520;
+}
+
+.tournamentTable tbody {
+    background-color: white;
+}
+
+.grandPrixTable {
+    display: grid;
+    width: 50%;
+    box-shadow: 6px 11px 5px gray;
+}
+
+.grandPrixTable th {
+    border: 2px solid rgb(49, 49, 49);
+    text-align: center;
+    font-size: 18px;
+    padding: 0.3em;
+    padding-right: 4em;
+    padding-left: 4em;
+}
+
+.grandPrixTable td {
+    border: 2px solid rgb(49, 49, 49);
+    text-align: center;
+    font-size: 16px;
+    padding: 0.3em;
+}
+
+.grandPrixTable thead {
+    background-color: #DAA520;
+}
+
+.grandPrixTable tbody {
+    background-color: white;
+}
+
+.GPTableContainer {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    margin-top: 5em;
+    margin-bottom: 2em;
+}
+
+.listContainer {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    margin-top: 1em;
+    margin-bottom: 4em;
+}
+
+.middleContainer {
+    display: grid;
+    align-items:center;
+    justify-content:center;
+}
+
+.addContainer {
+    display: grid;
+    text-align: center;
+    box-shadow: 6px 6px 10px gray;
+    padding: 1em;
+    padding-right: 5em;
+    padding-left: 5em;
 }

@@ -110,7 +110,6 @@ class TeamRemoveMembersView(View):
     def get(self, request, team_id):
         team = Team.objects.get(id=team_id)
         team_members = Member.objects.filter(team=team)
-        print(team_members)
         ctx = {
             'team': team,
             'team_members': team_members,
@@ -121,6 +120,6 @@ class TeamRemoveMembersView(View):
         team = Team.objects.get(id=team_id)
         for i in request.POST.getlist('player'):
             player = Player.objects.filter(name=i)
-            member = Member.objects.get(player=player, team=team)
+            member = Member.objects.get(player=player[0], team=team)
             member.delete()
         return redirect('/team_details/%s' % team_id)
