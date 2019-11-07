@@ -123,6 +123,9 @@ class Tournament(models.Model):
     cup = models.ForeignKey(Cup, null=True, on_delete=models.CASCADE)
     individual = models.BooleanField(default=True)
 
+    def __str__(self):
+        return '%s %s' % (self.cup, self.game)
+
     class Meta:
         unique_together = ("cup", "game", "individual")
 
@@ -166,6 +169,9 @@ class Participation(models.Model):
     partaker = models.ForeignKey(Partaker, null=True, on_delete=models.CASCADE)
     tournament = models.ForeignKey(Tournament, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return '%s - %s' % (self.partaker, self.tournament)
+
     class Meta:
         app_label = 'spartakiada'
 
@@ -177,6 +183,9 @@ class Duel(models.Model):
     points1 = models.IntegerField(null=True)
     points2 = models.IntegerField(null=True)
     lap = models.IntegerField(null=True)
+
+    def __str__(self):
+        return '%s %s:%s' % (self.tournament, self.player1, self.player2)
 
     class Meta:
         app_label = 'spartakiada'

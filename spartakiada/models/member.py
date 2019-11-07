@@ -8,7 +8,7 @@ class Member(models.Model):
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
 
     def __str__(self):
-        return '%s' % self.player.name
+        return '%s - %s' % (self.player.name, self.team.name)
 
     class Meta:
         app_label = 'spartakiada'
