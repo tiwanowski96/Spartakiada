@@ -1,0 +1,4 @@
+django
+kronos
+django_extensions
+django-pluralize-pl
