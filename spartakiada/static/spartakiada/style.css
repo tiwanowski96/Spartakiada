@@ -25,6 +25,7 @@ body {
     text-align: left;
     font-variant: small-caps;
     font-size: 21px;
+    color: rgb(55, 55, 55);
 }
 
 .points {
@@ -210,6 +211,8 @@ ol {
     display: flex;
     align-items: center;
     justify-items: center;
+    box-shadow: 6px 6px 10px gray;
+    padding: 1em;
 }
 
 .mediaContainer {
